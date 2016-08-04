@@ -2,19 +2,21 @@
 {% block body %}
 
 	<div id="map" style="height: 650px; width: 100%;"></div>
-	{% for place in places %}
-		{{ place.lat }} {{ place.lon }}<br/>
-	{% endfor %}
-<script type="text/javascript">
-	var markericon = "{{ asset('img/marker.png') }}"
-	var places = [];
-	{% set i = 0 %}
-	{% for place in places %}
-		places[{{ i }}] = [{{ place.lat }} , {{ place.lon }}, "{{ place.name }}" ];
-		{% set i = i+1 %}
-	{% endfor %}
-
-</script>
+	<div id="data">
+		{% for place in places %}
+			{{ place.lat }} {{ place.lon }}<br/>
+		{% endfor %}
+	</div>
+	<script type="text/javascript">
+		var markericon = "{{ asset('img/marker.png') }}"
+		var places = [];
+		{% set i = 0 %}
+		{% for place in places %}
+			places[{{ i }}] = [{{ place.lat }} , {{ place.lon }}, "{{ place.id }}" ];
+			{% set i = i+1 %}
+		{% endfor %}
+		var path = "{{ path('place_informations', {'id': 0 }) }}"
+	</script>
 	<script type="text/javascript" src="{{ asset('js/map.js') }}"></script>
 
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCY8T5nfMVq4_B-CS16WbEJbS5YY1_Lvl8&callback=initMap"

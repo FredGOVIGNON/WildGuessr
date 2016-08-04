@@ -6,3 +6,6 @@ user_map:
     path:     /user/map
     defaults: { _controller: UserBundle:Map:show }
 
+place_informations:
+    path:     /user/place/{id}
+    defaults: { _controller: UserBundle:Place:show }
