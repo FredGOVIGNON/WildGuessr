@@ -16,7 +16,6 @@ function initMap() {
 			    title: 'Vous êtes ici',
 			    icon: markericon
 			});
-			console.log(places);
 			for (i = 0 ; i < places.length ; i++ )
 			{
 				var point = {lat: places[i][0], lng: places[i][1]};
