@@ -1,11 +1,12 @@
 /*  HOME */
 body{
-    background-image: url('../img/Chartres-en-Lumieres-Portail-Royal-la-Cathedrale-Bleue.jpg');
+    background-image: url('../img/Chartres-en-Lumieres-Portail-Royal-la-Cathedrale-Bleue-gimp.jpg');
     background-position: 0px 50px;
     background-size: cover;
     background-repeat:no-repeat;
+    background-opacity: 0.2;
     width: 100%;
-    height: 100%;
+    height: auto;
 }
 
 
@@ -18,8 +19,40 @@ body{
     color: white !important;
 }
 
-.navbar-brand{
-    color: black !important;
+.glyphicon-globe{
+    width: 20px;
+    color: #22313F;
 }
 
+b, strong{
+    color: #22313F !important;
+}
 
+.txt-nav-bar{
+    font-size: 16px;
+}
+
+.navbar-toggle {
+    background-color: white !important;
+}
+
+.icon-bar{
+    border-color: white !important;
+}
+
+.home {
+    width: 100%;
+    height: 100%;
+}
+
+.btn {
+    position: fixed;
+    margin-top: 200px;
+    width: 15%;
+    height: 50px;
+}
+
+.banniere-deco-cath{
+    position: absolute;
+    margin-top: 910px;
+}
