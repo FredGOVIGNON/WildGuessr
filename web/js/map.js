@@ -63,5 +63,6 @@ function replaceMarker(map, userposition) {
   	});
 }
 function showMarker(map, idplace) {
+	
 	document.location.href=path+idplace;
 }
