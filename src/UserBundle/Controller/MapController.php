@@ -10,6 +10,8 @@ class MapController extends Controller
 	{
 		$em=$this->getDoctrine()->getManager();
 		$user=$this->getUser();
-		return $this->render('UserBundle:Default:map.html.twig');
+		$places=$em->getRepository('PlaceBundle:Place')->findAll();
+
+		return $this->render('UserBundle:Default:map.html.twig', array('places'=>$places));
 	}
 }
