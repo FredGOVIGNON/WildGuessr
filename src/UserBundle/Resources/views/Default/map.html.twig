@@ -1,17 +1,23 @@
 {% extends 'UserBundle::layout.html.twig' %}
 {% block body %}
-	<div id="map" style="height: 1000px; width: 1000px;"></div>
-	
-	<script>
-      function initMap() {
-        // Create a map object and specify the DOM element for display.
-        var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          scrollwheel: false,
-          zoom: 8
-        });
-      }
-    </script>
+
+	<div id="map" style="height: 650px; width: 100%;"></div>
+	{% for place in places %}
+		{{ place.lat }} {{ place.lon }}<br/>
+	{% endfor %}
+<script type="text/javascript">
+	var markericon = "{{ asset('img/marker.png') }}"
+	var places = [];
+	{% set i = 0 %}
+	{% for place in places %}
+		places[{{ i }}] = [{{ place.lat }} , {{ place.lon }}, "{{ place.name }}" ];
+		{% set i = i+1 %}
+	{% endfor %}
+	console.log(places);
+
+</script>
+	<script type="text/javascript" src="{{ asset('js/map.js') }}"></script>
+
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCY8T5nfMVq4_B-CS16WbEJbS5YY1_Lvl8&callback=initMap"
     async defer></script>
 {% endblock %}
