@@ -10,7 +10,7 @@ function initMap() {
 			var mapOptions = {
 			  center: location,
 			  zoom: 18,
-			  mapTypeControl: false,
+			  mapTypeControl: true,
 			  zoomControl: false,
 			  mapTypeId: google.maps.MapTypeId.TERRAIN,
 			  scrollwheel: false,
@@ -38,7 +38,7 @@ function initMap() {
 				markersarray.push(marker);
 	 			google.maps.event.addListener(marker, 'click', function(marker) {
  					var idplace = $(this)[0].title;
- 					showMarker (map, idplace);
+ 					showMarker (map, marker, idplace);
  				});
 			}
 			console.log(markersarray);
@@ -50,9 +50,9 @@ function initMap() {
 }
 function replaceMarker(map, userposition) {
  	navigator.geolocation.getCurrentPosition(function(position){
- 		console.log('');
  		userposition[0].setMap(null);
     	var location = {lat: position.coords.latitude, lng: position.coords.longitude};	
+	 	console.log(location);
 	 	var myposition = new google.maps.Marker({
     		position: location,
     		map: map,
@@ -62,7 +62,20 @@ function replaceMarker(map, userposition) {
   		userposition[0]=myposition;
   	});
 }
-function showMarker(map, idplace) {
-	
-	document.location.href=path+idplace;
+function showMarker(map, marker, idplace) {
+	navigator.geolocation.getCurrentPosition(function(position){
+	var latuser = position.coords.latitude;
+	var lnguser = position.coords.longitude;
+	var latplace = marker.latLng.lat(function(){});
+	var lngplace = marker.latLng.lng(function(){});
+	var distance = Math.abs(latuser-latplace)+Math.abs(lnguser-lngplace)*110574;
+	if(distance<=20)
+	{
+		document.location.href=path+idplace;
+	}
+	else
+	{
+		alert('vous etes à '+distance+"m");
+	}
+	});
 }
