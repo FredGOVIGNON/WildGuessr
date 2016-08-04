@@ -1,0 +1,22 @@
+/*  HOME */
+body{
+    background-image: url('../img/Chartres-en-Lumieres-Portail-Royal-la-Cathedrale-Bleue.jpg');
+    background-position: 0px 50px;
+    background-size: cover;
+    background-repeat:no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+
+.navbar{
+    background-color: #4183D7;
+    color: white;
+}
+
+.navbar a{
+    color: white !important;
+}
+
+
+

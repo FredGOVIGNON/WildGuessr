@@ -1,7 +1,8 @@
-user_homepage:
+homepage:
     path:     /
-    defaults: { _controller: UserBundle:Default:index }
+    defaults: { _controller: UserBundle:Home:show }
 
 user_map:
-    path:     /map
+    path:     /user/map
     defaults: { _controller: UserBundle:Map:show }
+

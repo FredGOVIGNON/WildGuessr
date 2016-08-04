@@ -1,5 +1,6 @@
 {% extends 'UserBundle::layout.html.twig' %}
 {% block body %}
+
 	<div id="map" style="height: 650px; width: 100%;"></div>
 	{% for place in places %}
 		{{ place.lat }} {{ place.lon }}<br/>
@@ -16,6 +17,7 @@
 
 </script>
 	<script type="text/javascript" src="{{ asset('js/map.js') }}"></script>
+
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCY8T5nfMVq4_B-CS16WbEJbS5YY1_Lvl8&callback=initMap"
     async defer></script>
 {% endblock %}
