@@ -8,9 +8,9 @@ function initMap() {
 			var map = new google.maps.Map(document.getElementById('map'), {
 		      center: location,
 		      scrollwheel: false,
-		      zoom: 17
+		      zoom: 20
 		    });
-		   	var marker = new google.maps.Marker({
+		   	var myposition = new google.maps.Marker({
 			    position: location,
 			    map: map,
 			    title: 'Vous êtes ici',
@@ -30,3 +30,16 @@ function initMap() {
     }
         
 }
+$(document).ready(function(){
+	$('#map').click(function(){
+		navigator.geolocation.getCurrentPosition(function(position){
+			var location = {lat: position.coords.latitude, lng: position.coords.longitude};
+			var myposition = new google.maps.Marker({
+			    position: location,
+			    map: map,
+			    title: 'Vous êtes ici',
+			    icon: markericon
+			});
+		});
+	});
+});
