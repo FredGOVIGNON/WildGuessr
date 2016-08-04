@@ -1,0 +1,3 @@
+place_homepage:
+    path:     /
+    defaults: { _controller: PlaceBundle:Default:index }
