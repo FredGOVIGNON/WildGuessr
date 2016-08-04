@@ -9,3 +9,20 @@ user_map:
 place_informations:
     path:     /user/place/{id}
     defaults: { _controller: UserBundle:Place:show }
+
+user_registration:
+    path:     /
+    defaults: { _controller: UserBundle:Registration:register }
+
+user_register_confirmed:
+    path:     /
+    defaults: { _controller: UserBundle:Map:show }
+
+user_login:
+    path:     /
+    defaults: { _controller: UserBundle:Security:login }
+
+user_login_check:
+    path:    /
+    defaults: { _controller: UserBundle:Security:check }
+

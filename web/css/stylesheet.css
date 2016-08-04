@@ -1,6 +1,6 @@
 /*  HOME */
 body{
-    background-image: url('../img/Chartres-en-Lumieres-Portail-Royal-la-Cathedrale-Bleue-gimp.jpg');
+    background-image: url('../img/Chartres-en-Lumieres-Portail-Royal-la-Cathedrale-Bleue-gimp2.jpg');
     background-position: 0px 50px;
     background-size: cover;
     background-repeat:no-repeat;
@@ -45,14 +45,14 @@ b, strong{
     height: 100%;
 }
 
-.btn {
+.btn-lg {
     position: fixed;
-    margin-top: 200px;
+    margin-top: 250px;
     width: 15%;
     height: 50px;
 }
 
-.banniere-deco-cath{
-    position: absolute;
-    margin-top: 910px;
+.btn-primary{
+    margin-right: 200px;
 }
+
