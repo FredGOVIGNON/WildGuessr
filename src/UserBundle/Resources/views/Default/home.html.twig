@@ -54,24 +54,42 @@
           <h4 class="modal-title" style="text-align:center">Identifiez-vous pour vous connecter</h4>
         </div>
       <div class="modal-body">
-      
-      <form action="{{ path("fos_user_security_check") }}" method="post">
+        
+        <form action="{{ path("fos_user_security_check") }}" method="post">
           <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
-
+          <div class="col-md-12">
+            <div class="col-md-6">
           <label for="username">Nom d'utilisateur</label>
-          <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
-
+            </div>
+            <div class="col-md-6">
+          <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" /></br>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="col-md-6">
           <label for="password">Mot de passe</label>
-          <input type="password" id="password" name="_password" required="required" />
-
+            </div>
+            <div class="col-md-6">
+          <input type="password" id="password" name="_password" required="required" /></br>
+            </div>
+          </div>
+            </br>
+            <div class="col-md-12">
+              <div class="col-md-4"></div>
+              <div class="col-md-8">
           <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
-          <label for="remember_me">se souvenir de moi</label>
-
-
+          <label for="remember_me" style="text-align-center">se souvenir de moi</label></br></br>
+              </div>
+            </div>
           <div class="modal-footer">
-             <input type="submit" id="_submit" name="_submit" value="Valider" />
+             <div class="col-md-6 col-md-offset-5">
+             <input type="submit" class="btn btn-login btn-primary" id="_submit" name="_submit" value="Valider" />
+           </div>
+           </br>
           </div>
       </form>
+    </div>
+  </div>
     </div>
   </div>
   </div>
@@ -95,8 +113,8 @@
         {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
             {{ form_widget(form) }}
       <div class="modal-footer">
-        <div>
-          <input type="submit" value="{{ 'registration.submit'|trans }}" />
+        <div class="col-md-6 col-md-offset-5">
+          <input type="submit" class="btn btn-login btn-primary" style="text-align:center" value="{{ 'valider'|trans }}" />
         </div>
         {{ form_end(form) }}
       </div>
