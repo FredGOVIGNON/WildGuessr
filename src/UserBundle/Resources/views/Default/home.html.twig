@@ -3,133 +3,110 @@
 {% block body %}
 
 <div class="home">
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
 
-      </button>
-      <div class="brand"><a class="navbar-brand" href="./"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span><b>  CITYGUESS'R</b></a>
+        </button>
+        <div class="brand"><a class="navbar-brand" href="#"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span><b>  CITYGUESS'R</b></a>
+        </div>
       </div>
-    </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#myModal" class="txt-nav-bar"><span class="glyphicon glyphicon-user"></span>  S'enregistrer</a></li>
-        <li class="btn-connexion">
-          <a href="#myModal2" class="txt-nav-bar"><span class="glyphicon glyphicon-off"></span>  Se connecter</a>
-        </li>
-      </ul>
-      <ul class="nav navbar-nav">
-                <li><a href="#" class="txt-nav-bar"><span class="glyphicon glyphicon-envelope"></span> Contact</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#" class="txt-nav-bar"><span class="glyphicon glyphicon-user"></span>  S'enregistrer</a></li>
+          <li class="btn-connexion">
+            <a href="#" class="txt-nav-bar"><span class="glyphicon glyphicon-off"></span>  Se connecter</a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav">
+                  <li><a href="#" class="txt-nav-bar"><span class="glyphicon glyphicon-envelope"></span> Contact</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+</div>
 
-
-
-{# boutons centraux #}
-<div class="bouttons">
-  <div class="col-md-2 col-md-offset-3 col-sm-10">
-      
-      <!-- Trigger the modal with a button -->
-  <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal2">Se connecter</button>
-
-  <!-- Modal -->
+<!-- Modal login-->
   <div class="modal fade" id="myModal2" role="dialog">
     <div class="modal-dialog">
-    
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title" style="text-align:center">Identifiez-vous pour vous connecter</h4>
         </div>
-      <div class="modal-body">
-        
         <form action="{{ path("fos_user_security_check") }}" method="post">
-          <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
-          <div class="col-md-12">
+          <div class="modal-body">
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
             <div class="col-md-6">
-          <label for="username">Nom d'utilisateur</label>
+              <label for="username">Nom d'utilisateur</label>
             </div>
             <div class="col-md-6">
-          <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" /></br>
-            </div>
-          </div>
-          <div class="col-md-12">
-            <div class="col-md-6">
-          <label for="password">Mot de passe</label>
+              <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" /></br>
             </div>
             <div class="col-md-6">
-          <input type="password" id="password" name="_password" required="required" /></br>
+              <label for="password">Mot de passe</label>
             </div>
-          </div>
+            <div class="col-md-6">
+              <input type="password" id="password" name="_password" required="required" /></br>
+            </div>
             </br>
-            <div class="col-md-12">
-              <div class="col-md-4"></div>
-              <div class="col-md-8">
-          <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
-          <label for="remember_me" style="text-align-center">se souvenir de moi</label></br></br>
-              </div>
+            <div class="col-md-8 col-md-offset-4">
+              <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+              <label for="remember_me" style="text-align-center">se souvenir de moi</label></br></br>
             </div>
+          </div>
           <div class="modal-footer">
              <div class="col-md-6 col-md-offset-5">
-             <input type="submit" class="btn btn-login btn-primary" id="_submit" name="_submit" value="Valider" />
-           </div>
-           </br>
+              <input type="submit" class="btn btn-login btn-primary" id="_submit" name="_submit" value="Valider" />
+            </div>
+            </br>
           </div>
-      </form>
+        </form>
+      </div>
     </div>
   </div>
-    </div>
-  </div>
-  </div>
-</div>
-
-  <div class="col-md-3 col-md-offset-2 col-sm-10">
-    <!-- Trigger the modal with a button -->
-      <button type="button"class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal">S'enregistrer</button>
-
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
+<!-- Modal register-->
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
     <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title" style="text-align:center">Enregistrez-vous</h4>
-      </div>
-      <div class="modal-body">
-        {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
-            {{ form_widget(form) }}
-      <div class="modal-footer">
-        <div class="col-md-6 col-md-offset-5">
-          <input type="submit" class="btn btn-login btn-primary" style="text-align:center" value="{{ 'valider'|trans }}" />
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title" style="text-align:center">Enregistrez-vous</h4>
         </div>
-        {{ form_end(form) }}
+        {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+        <div class="modal-body">
+          {{ form_widget(form) }}
+        </div>
+        <div class="modal-footer">
+          <div class="col-md-6 col-md-offset-5">
+           <input type="submit" class="btn btn-login btn-primary" style="text-align:center" value="{{ 'valider'|trans }}" />
+          </div>
+          {{ form_end(form) }}
+        </div>
       </div>
-
-  {# {{ form_end(form) }} #}
-      </div>
-</div>
-</div>
-</div>
-</div>
-
-
+    </div>
   </div>
-
-
-
-
+{# boutons centraux #}
+<div class="boutons">
+  <div class="col-md-2 col-md-offset-3 col-xs-12 btn-style">  
+      <!-- Trigger the login modal with a button -->
+    <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal2">Se connecter</button>
+  </div>
+</div>
+  <div class="col-md-2 col-md-offset-2 col-xs-12 btn-style">
+    <!-- Trigger the register modal with a button -->
+      <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal">S'enregistrer</button>
+  </div>
+</div>
 {% endblock %}
