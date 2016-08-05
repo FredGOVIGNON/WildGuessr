@@ -22,9 +22,9 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#" class="txt-nav-bar"><span class="glyphicon glyphicon-user"></span>  S'enregistrer</a></li>
+          <li><a href="" class="txt-nav-bar"  data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-user"></span>  S'enregistrer</a></li>
           <li class="btn-connexion">
-            <a href="#" class="txt-nav-bar"><span class="glyphicon glyphicon-off"></span>  Se connecter</a>
+            <a href="" class="txt-nav-bar" data-toggle="modal" data-target="#myModal2"><span class="glyphicon glyphicon-off"></span>  Se connecter</a>
           </li>
         </ul>
         <ul class="nav navbar-nav">
@@ -33,7 +33,6 @@
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
-</div>
 
 <!-- Modal login-->
   <div class="modal fade" id="myModal2" role="dialog">
@@ -98,15 +97,15 @@
     </div>
   </div>
 {# boutons centraux #}
-<div class="boutons">
-  <div class="col-md-2 col-md-offset-3 col-xs-12 btn-style">  
-      <!-- Trigger the login modal with a button -->
-    <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal2">Se connecter</button>
-  </div>
-</div>
-  <div class="col-md-2 col-md-offset-2 col-xs-12 btn-style">
-    <!-- Trigger the register modal with a button -->
-      <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal">S'enregistrer</button>
+  <div class="boutons">
+    <div class="col-md-2 col-md-offset-3 col-xs-12 btn-style">  
+        <!-- Trigger the login modal with a button -->
+      <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal2">Se connecter</button>
+    </div>
+    <div class="col-md-2 col-md-offset-2 col-xs-12 btn-style">
+      <!-- Trigger the register modal with a button -->
+        <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal">S'enregistrer</button>
+    </div>
   </div>
 </div>
 {% endblock %}
