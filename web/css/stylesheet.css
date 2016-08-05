@@ -45,14 +45,20 @@ b, strong{
     height: 100%;
 }
 
-.btn-lg {
-    position: fixed;
-    margin-top: 250px;
-    width: 15%;
+.btn-style {
     height: 50px;
+    position: relative;
 }
-
+.btn-lg
+{
+    position: relative;
+    width: 100%;
+}
 .btn-primary{
     margin-right: 200px;
 }
 
+.boutons
+{
+    margin-top: 250px;
+}
