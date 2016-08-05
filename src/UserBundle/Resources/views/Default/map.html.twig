@@ -23,17 +23,17 @@
       <ul class="nav navbar-nav navbar-right">
         
         <li class="btn-connexion">
-          <a href="#myModal2" class="txt-nav-bar"><span class="glyphicon glyphicon-off"></span>  Se déconnecter</a>
+          <a href="{{ path('fos_user_security_logout') }}" class="txt-nav-bar"><span class="glyphicon glyphicon-off"></span>  Se déconnecter</a>
         </li>
       </ul>
       <ul class="nav navbar-nav">
-                <li><a href="#" class="txt-nav-bar"><span class="glyphicon glyphicon-user"></span> Mon profil</a></li>
+                <li><a href="{{ path('profile') }}" class="txt-nav-bar"><span class="glyphicon glyphicon-user"></span> Mon profil</a></li>
       </ul>
       <ul class="nav navbar-nav">
-                <li><a href="#" class="txt-nav-bar"><span class="glyphicon glyphicon-user"></span><span class="glyphicon glyphicon-user"></span> Equipe</a></li>
+                <li><a href="{{ path('team') }}" class="txt-nav-bar"><span class="glyphicon glyphicon-user"></span><span class="glyphicon glyphicon-user"></span> Equipe</a></li>
       </ul>
       <ul class="nav navbar-nav">
-                <li><a href="#" class="txt-nav-bar"><span class=" glyphicon glyphicon-bookmark"></span> Classement</a></li>
+                <li><a href="{{ path('classement') }}" class="txt-nav-bar"><span class=" glyphicon glyphicon-bookmark"></span> Classement</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

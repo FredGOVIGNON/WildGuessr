@@ -29,3 +29,19 @@ place_informations:
 place_name_check:
     path:    /user/place/{id}/name_check
     defaults: { _controller: UserBundle:Place:checkName }
+
+profile:
+    path:     /user/profile
+    defaults: { _controller: UserBundle:Profile:show }
+
+team:
+    path:     /user/team
+    defaults: { _controller: UserBundle:Team:show }
+
+classement:
+    path:     /user/classement
+    defaults: { _controller: UserBundle:Team:classement }
+
+addteam:
+    path:     /user/addteam
+    defaults: { _controller: UserBundle:Team:new }

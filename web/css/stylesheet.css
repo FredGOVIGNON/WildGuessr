@@ -67,3 +67,18 @@ b, strong{
 {
     margin-top: 250px;
 }
+
+.teamlist
+{
+    text-align: center;
+    background-color: #76aef2;
+    margin-top: 50px;
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: bolder;
+}
+.btn-retour
+{
+    width: 100%;
+    margin-top: 20px;
+}

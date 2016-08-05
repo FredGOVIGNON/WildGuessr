@@ -1,7 +1,8 @@
 {% extends 'UserBundle::layout.html.twig' %}
 {% block body %}
+	<a href="{{ path('user_map') }}" class="btn btn-default">retour à la carte</a>
 	{% if checkpoint.isnamed == true %}
-		{{ place.name }}
+		<p>{{ place.name }}</p>
 	{% else %}
 		<form action="{{ path('place_name_check', {'id': place.id }) }}" method="post">
 			<label>Entrez le nom du lieu</label>

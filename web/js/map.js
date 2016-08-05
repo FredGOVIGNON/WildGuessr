@@ -69,7 +69,7 @@ function showMarker(map, marker, idplace) {
 	var latplace = marker.latLng.lat(function(){});
 	var lngplace = marker.latLng.lng(function(){});
 	var distance = Math.abs(latuser-latplace)+Math.abs(lnguser-lngplace)*110574;
-	if(distance<=20)
+	if(distance<=2000)
 	{
 		document.location.href=path+idplace;
 	}

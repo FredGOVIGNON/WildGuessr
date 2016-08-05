@@ -1,0 +1,13 @@
+{% extends 'UserBundle::layout.html.twig' %}
+{% block body %}
+	<div class="col-md-4 col-md-offset-4 teamlist">
+		<h3>Profil</h3>
+		<p>Pseudo: {{ user.username }}</p>
+		<p>Email: {{ user.email }}</p>
+		<p>Score: {{ datauser.scoreuser }} pts</p>
+		<p>Équipe:  {{ team }}</p>
+	</div>
+	<div class="col-md-2 col-md-offset-5">
+		<a href="{{ path('user_map') }}" class="btn btn-default btn-retour">retour à la carte</a>
+	</div>
+{% endblock %}

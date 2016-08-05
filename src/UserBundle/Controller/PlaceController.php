@@ -16,6 +16,8 @@ class PlaceController extends Controller
 		$em=$this->getDoctrine()->getManager();
 		$user=$this->getUser();
 		$place=$em->getRepository('PlaceBundle:Place')->findOneById($id);
+		$datauser=$em->getRepository('UserBundle:DataUser')->findOneByIduser($user->getId());
+
 		$checkpoint=$em->getRepository('PlaceBundle:Checkpoint')->findOneBy(array('iduser'=>$user->getId(), 'idplace'=>$place->getId()));
 		if(empty($checkpoint))
 		{
@@ -27,9 +29,18 @@ class PlaceController extends Controller
 			$checkpoint -> setScored(1);
 			$em->persist($checkpoint);
 			$em->flush();
+			$datauser->setScoreuser(($datauser->getScoreuser())+1);
+			$em->persist($datauser);
+			$em->flush();
 		}
 		else
 		{
+			if($checkpoint->getIsonit() == false)
+			{
+				$datauser->setScoreuser(($datauser->getScoreuser())+1);
+				$em->persist($datauser);
+				$em->flush();
+			}
 			$checkpoint->setIsonit(true);
 			$em->persist($checkpoint);
 			$em->flush();
@@ -45,6 +56,7 @@ class PlaceController extends Controller
 		$em=$this->getDoctrine()->getManager();
 		$user=$this->getUser();
 		$testname=$request->request->get('placename');
+		$datauser=$em->getRepository('UserBundle:DataUser')->findOneByIduser($user->getId());
 
 		$place=$em->getRepository('PlaceBundle:Place')->findOneById($id);
 		$checkpoint=$em->getRepository('PlaceBundle:Checkpoint')->findOneBy(array('iduser'=>$user->getId(), 'idplace'=>$place->getId()));
@@ -52,7 +64,11 @@ class PlaceController extends Controller
 		if($testname == $place->getName())
 		{
 			$checkpoint->setIsnamed(true);
+			$checkpoint->setScored(($checkpoint->getScored())+1);
 			$em->persist($checkpoint);
+			$em->flush();
+			$datauser->setScoreuser(($datauser->getScoreuser())+1);
+			$em->persist($datauser);
 			$em->flush();
 		}
 		$url = $this -> generateUrl('place_informations', array('id'=>$id));
