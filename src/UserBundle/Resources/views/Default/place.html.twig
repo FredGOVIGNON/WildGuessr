@@ -1,4 +1,20 @@
 {% extends 'UserBundle::layout.html.twig' %}
 {% block body %}
-	{{ place.name }}
+	{% if checkpoint.isnamed == true %}
+		{{ place.name }}
+	{% else %}
+		<form action="{{ path('place_name_check', {'id': place.id }) }}" method="post">
+			<label>Entrez le nom du lieu</label>
+			<input name="placename"/>
+			<input type="submit" value="vérifier"/>
+		</form>
+	{% endif %}
+	<img src="{{ asset('img/uploads/') }}" alt="image du lieu {{ place.id }}">
+	{% if checkpoint.isonit == true and checkpoint.isnamed == true %}
+		<p>médaille d'or</p>
+	{% elseif checkpoint.isonit == true or checkpoint.isnamed == true %}
+		<p>médaille d'argent</p>
+	{% else %}
+		<p>médaille en chocolat</p>
+	{% endif %}
 {% endblock %}

@@ -55,31 +55,23 @@
         </div>
       <div class="modal-body">
       
-<form action="login.php?l=fr" target="_blank" method="POST">
-    {# {{ form_start(form) }} #}
+      <form action="{{ path("fos_user_security_check") }}" method="post">
+          <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
 
-    <div class="col-md-12">
-      <div class="col-md-4">
-          <p><strong> E-mail : </strong></p>
-        </div>
-        <div class="col-md-8">
-          <input>{# {{ form_widget(form.email) }} #}
-        </div>
-    </div>
+          <label for="username">Nom d'utilisateur</label>
+          <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
 
-    <div class="col-md-12">
-        <div class="col-md-4">
-          <p><strong> Mot de passe :</strong></p>
-        </div>
-        <div class="col-md-8">
-          <input>{# {{ form_widget(form.plainPassword.first) }} #}
-        </div></br></br></br>
-    </div></br></br></br></br>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-primary" data-dismiss="modal">Se connecter</button>
-    </div>
-  </form>
-  {# {{ form_end(form) }} #}
+          <label for="password">Mot de passe</label>
+          <input type="password" id="password" name="_password" required="required" />
+
+          <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+          <label for="remember_me">se souvenir de moi</label>
+
+
+          <div class="modal-footer">
+             <input type="submit" id="_submit" name="_submit" value="Valider" />
+          </div>
+      </form>
     </div>
   </div>
   </div>
@@ -100,48 +92,14 @@
         <h4 class="modal-title" style="text-align:center">Enregistrez-vous</h4>
       </div>
       <div class="modal-body">
-
-<form action="login.php?l=fr" target="_blank" method="POST">
-    {# {{ form_start(form) }} #}
-    <div class="col-md-12">
-      <div class="col-md-4">
-        <p><strong> Pseudonyme : </strong></p>
+        {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+            {{ form_widget(form) }}
+      <div class="modal-footer">
+        <div>
+          <input type="submit" value="{{ 'registration.submit'|trans }}" />
+        </div>
+        {{ form_end(form) }}
       </div>
-      <div class="col-md-8">
-
-        <input>{# {{ form_widget(form.username) }} #}
-      </div>
-    </div>
-
-    <div class="col-md-12">
-      <div class="col-md-4">
-          <p><strong> E-mail : </strong></p>
-        </div>
-        <div class="col-md-8">
-          <input>{# {{ form_widget(form.email) }} #}
-        </div>
-    </div>
-
-    <div class="col-md-12">
-        <div class="col-md-4">
-          <p><strong> Mot de passe :</strong></p>
-        </div>
-        <div class="col-md-8">
-          <input>{# {{ form_widget(form.plainPassword.first) }} #}
-        </div>
-    </div>
-
-    <div class="col-md-12">
-        <div class="col-md-4">
-          <p><strong> Confirmez mot de passe:</strong></p>
-        </div>
-        <div class="col-md-8">
-          <input>{# {{ form_widget(form.plainPassword.second) }} #}
-        </div>
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-primary" data-dismiss="modal">Valider</button>
-    </div>
   </form>
   {# {{ form_end(form) }} #}
   </div>
