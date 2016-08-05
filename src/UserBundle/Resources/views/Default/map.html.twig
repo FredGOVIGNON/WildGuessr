@@ -2,7 +2,7 @@
 {% block body %}
 
 
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-map">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -40,12 +40,7 @@
 </nav>
 
 
-	<div id="map" style="height: 650px; width: 100%;"></div>
-	<div id="data">
-		{% for place in places %}
-			{{ place.lat }} {{ place.lon }}<br/>
-		{% endfor %}
-	</div>
+	<div id="map" class="map"></div>
 	<script type="text/javascript">
 		var markericon = "{{ asset('img/marker.png') }}"
 		var places = [];
@@ -60,7 +55,6 @@
 
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCY8T5nfMVq4_B-CS16WbEJbS5YY1_Lvl8&callback=initMap"
     async defer></script>
-
 
 
 {% endblock %}

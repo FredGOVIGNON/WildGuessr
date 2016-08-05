@@ -11,7 +11,7 @@ body{
 
 .navbar{
     background-color: #4183D7;
-    color: white;
+
 }
 
 .navbar a{
@@ -54,8 +54,7 @@ b, strong{
     height: 50px;
     position: relative;
 }
-.btn-lg
-{
+.btn-lg{
     position: relative;
     width: 100%;
 }
@@ -81,4 +80,30 @@ b, strong{
 {
     width: 100%;
     margin-top: 20px;
+}
+/* CSS MAP */
+
+.map{
+    height: 650px;
+    width: 100%;
+}
+
+.navbar-map{
+    margin-bottom: 0px;
+}
+
+.dropdown-menu{
+    color: black !important;
+}
+
+.ss-menu{
+    background-color: #4183D7;
+}
+
+.divider{
+    color: black;
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover{
+    background-color: #426ea7;
 }
