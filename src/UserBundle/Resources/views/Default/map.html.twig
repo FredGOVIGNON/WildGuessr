@@ -2,7 +2,7 @@
 {% block body %}
 
 
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-map">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -22,12 +22,24 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         
-        <li class="btn-connexion">
-          <a href="#myModal2" class="txt-nav-bar"><span class="glyphicon glyphicon-off"></span>  Se déconnecter</a>
+        <li class="btn-deconnexion">
+          <a href="./" class="txt-nav-bar"><span class="glyphicon glyphicon-off"></span>  Se déconnecter</a>
         </li>
       </ul>
       <ul class="nav navbar-nav">
-                <li><a href="#" class="txt-nav-bar"><span class="glyphicon glyphicon-user"></span> Mon profil</a></li>
+                                
+                <li class="dropdown">
+          <a href="#" class="txt-nav-bar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Mon profil<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#" class="ss-menu">Mes paramètres</a></li>
+            <li><a href="#" class="ss-menu">Mes jeux</a></li>
+            <li><a href="#" class="ss-menu">Mes cartes</a></li>
+            <li><a href="#" class="ss-menu">Mes challenges</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#" class="ss-menu">Se déconnecter</a></li>
+          </ul>
+        		</li>
+
       </ul>
       <ul class="nav navbar-nav">
                 <li><a href="#" class="txt-nav-bar"><span class="glyphicon glyphicon-user"></span><span class="glyphicon glyphicon-user"></span> Equipe</a></li>
@@ -40,7 +52,7 @@
 </nav>
 
 
-	<div id="map" style="height: 650px; width: 100%;"></div>
+	<div id="map" class="map"></div>
 	<div id="data">
 		{% for place in places %}
 			{{ place.lat }} {{ place.lon }}<br/>
@@ -60,7 +72,6 @@
 
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCY8T5nfMVq4_B-CS16WbEJbS5YY1_Lvl8&callback=initMap"
     async defer></script>
-
 
 
 {% endblock %}
